@@ -3,7 +3,7 @@
 
 ## Table of Contents
 
-- [Part 0: Quick Start (Reconstruction Steps for Clone)](#part-0-quick-start-reconstruction-steps-for-clone)
+- [Part 0: Quick Start (Fastest way to set up)](#part-0-quick-start-fastest-way-to-set-up)
 - [Architecture](#understanding-the-architecture)
 - [Part 1: Building a Fresh Portable from Scratch](#part-1-building-a-fresh-portable-from-scratch)
 - [Part 2: Upgrading an Existing Portable Instance](#part-2-upgrading-an-existing-portable-instance)
@@ -12,20 +12,20 @@
 
 ---
 
-## Part 0: Quick Start (Reconstruction Steps for Clone)
+## Part 0: Quick Start (Fastest way to set up)
 
 To run a clone of `https://github.com/sato-note/ObsidianPortable_1.12.7`:
 
-1.  **Clone the repository:**
+1.  **Clone and enter the repository:** (Crucial so relative paths in Step 4 resolve correctly)
     ```powershell
     git clone https://github.com/sato-note/ObsidianPortable_1.12.7.git
     cd ObsidianPortable_1.12.7
     ```
 2.  **Download installer:**
     *   URL: `https://github.com/obsidianmd/obsidian-releases/releases/download/v1.12.7/Obsidian-1.12.7.exe`
-3.  **Extract executable:**
-    *   Command: `7z x -t# -aoa Obsidian-1.12.7.exe 4.7z` (Extracts AMD64 resource container)
-    *   Command: `7z e -aoa 4.7z Obsidian.exe` (Extracts `Obsidian.exe`)
+3.  **Extract executable (2 steps required; 7z cannot extract from nested archives in a single command):**
+    *   Command: `7z x -t# -aoa Obsidian-1.12.7.exe 4.7z` (Extracts inner archive `4.7z` avoiding PowerShell `$` escaping bugs)
+    *   Command: `7z e -aoa 4.7z Obsidian.exe` (Extracts `Obsidian.exe` from `4.7z`)
 4.  **Place executable:**
     *   Move `Obsidian.exe` to `App\Obsidian\Obsidian.exe`
 
