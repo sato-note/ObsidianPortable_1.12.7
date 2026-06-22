@@ -3,11 +3,31 @@
 
 ## Table of Contents
 
+- [Part 0: Quick Start (Reconstruction Steps for Clone)](#part-0-quick-start-reconstruction-steps-for-clone)
 - [Architecture](#understanding-the-architecture)
 - [Part 1: Building a Fresh Portable from Scratch](#part-1-building-a-fresh-portable-from-scratch)
 - [Part 2: Upgrading an Existing Portable Instance](#part-2-upgrading-an-existing-portable-instance)
 - [Part 3: Cloning Portable Instances](#part-3-cloning-portable-instances)
 - [Troubleshooting](#troubleshooting)
+
+---
+
+## Part 0: Quick Start (Reconstruction Steps for Clone)
+
+To run a clone of `https://github.com/sato-note/ObsidianPortable_1.12.7`:
+
+1.  **Clone the repository:**
+    ```powershell
+    git clone https://github.com/sato-note/ObsidianPortable_1.12.7.git
+    cd ObsidianPortable_1.12.7
+    ```
+2.  **Download installer:**
+    *   URL: `https://github.com/obsidianmd/obsidian-releases/releases/download/v1.12.7/Obsidian-1.12.7.exe`
+3.  **Extract executable:**
+    *   Command: `7z x -t# -aoa Obsidian-1.12.7.exe 4.7z` (Extracts AMD64 resource container)
+    *   Command: `7z e -aoa 4.7z Obsidian.exe` (Extracts `Obsidian.exe`)
+4.  **Place executable:**
+    *   Move `Obsidian.exe` to `App\Obsidian\Obsidian.exe`
 
 ---
 
